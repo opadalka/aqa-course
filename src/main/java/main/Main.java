@@ -1,71 +1,26 @@
 package main;
 
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashSet;
+
 public class Main {
 
-    /*
-        someMethod();
-        someMethod("new string", 1, true);
 
-        A a = new A();
-        B b = new B();
-        C c = new C();
-        D d = new D();
+    public static void main(String... args) {
 
-         A.smth -> B
-         C.smth -> smth v2.0
-         C -> D smth2.0
-         D.smth2.0
+        ArrayList<String> stringSet = new ArrayList<>();
 
-        a.smth();
-        b.smth();
-        c.smth();
-        d.smth();
-     */
+        stringSet.add("a");
+        stringSet.add("a");
+        stringSet.add("a");
+        stringSet.add("a");
+        stringSet.add("b");
 
-    /*
-    MyObject objectOne = new MyObject();
-        MyObject objectTwo = new MyObject();
-
-        objectOne.increase();
-        objectTwo.decrease();
-
-        objectOne.mySecondObject.decrease();
-        objectOne.mySecondObject.decrease();
-
-        objectTwo.mySecondObject.increase();
-        objectTwo.mySecondObject.increase();
-
-        System.out.println(objectOne.index);
-        System.out.println(objectOne.mySecondObject.innerIndex);
-        System.out.println(objectTwo.index);
-        System.out.println(objectTwo.mySecondObject.innerIndex);
-
-        try {
-            objectOne.stackedMethod();
-        } finally {
-            System.out.println("This code is always executed");
-        }
-
-        System.out.println("after exception");
-     */
-
-    public static void main(String... args) throws InterruptedException {
-        MyConditionalClass myConditionalClass = new MyConditionalClass();
-//        myConditionalClass.myConditionTest("a");
-//        myConditionalClass.myConditionTest("aa");
-//        myConditionalClass.myConditionTest(null);
-
-//        myConditionalClass.complicateCounter(99);
-//        myConditionalClass.complicateCounter(9000);
-
-//        myConditionalClass.whileCycle(16);
-        myConditionalClass.switchAction("a");
-        myConditionalClass.switchAction("c");
-        myConditionalClass.switchAction("d");
+        System.out.println(stringSet.size());
     }
 
-
-    public static void someMethod() {
+    public static void someMethod() throws FileNotFoundException {
         someMethod("some_string");
     }
 
