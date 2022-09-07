@@ -1,23 +1,12 @@
 package main;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashSet;
 
 public class Main {
 
-
     public static void main(String... args) {
-
-        ArrayList<String> stringSet = new ArrayList<>();
-
-        stringSet.add("a");
-        stringSet.add("a");
-        stringSet.add("a");
-        stringSet.add("a");
-        stringSet.add("b");
-
-        System.out.println(stringSet.size());
+        SystemUser admin = new SystemUser("Admin", 33);
+        SystemUser nonAdminUser = new SystemUser("Joanne", 33);
     }
 
     public static void someMethod() throws FileNotFoundException {
