@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+//TODO: load https://www.ukr.net/ or any mail service
+//TODO: and login into mail
 public class BaseWebTest {
 
     public void loadGooglePage() {
