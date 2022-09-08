@@ -1,12 +1,14 @@
 package main;
 
+import selenium.BaseWebTest;
+
 import java.io.FileNotFoundException;
 
 public class Main {
 
     public static void main(String... args) {
-        SystemUser admin = new SystemUser("Admin", 33);
-        SystemUser nonAdminUser = new SystemUser("Joanne", 33);
+        BaseWebTest baseWebTest = new BaseWebTest();
+        baseWebTest.loadGooglePage();
     }
 
     public static void someMethod() throws FileNotFoundException {
@@ -22,12 +24,7 @@ public class Main {
     }
 
     public static void someMethod(String input, int amount, boolean isTrue) {
-        System.out.println(input);
-        System.out.println(amount);
-        System.out.println(isTrue);
-        System.out.println("aaaaa");
-        System.out.println("bbbb");
-        System.out.println("cccc");
+
     }
 
     public static class A {
