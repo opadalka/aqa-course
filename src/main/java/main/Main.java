@@ -25,6 +25,7 @@ public class Main {
         System.out.println(input);
         System.out.println(amount);
         System.out.println(isTrue);
+        System.out.println("aaaaa");
     }
 
     public static class A {
