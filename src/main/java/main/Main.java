@@ -1,14 +1,18 @@
 package main;
 
 import selenium.BaseWebTest;
+import selenium.PadalkaWebSeleniumHW;
 
 import java.io.FileNotFoundException;
 
 public class Main {
 
     public static void main(String... args) {
-        BaseWebTest baseWebTest = new BaseWebTest();
-        baseWebTest.loadGooglePage();
+        //BaseWebTest baseWebTest = new BaseWebTest();
+       // baseWebTest.loadGooglePage();
+
+        PadalkaWebSeleniumHW padalkatest = new PadalkaWebSeleniumHW();
+        padalkatest.openBrowser();
     }
 
     public static void someMethod() throws FileNotFoundException {
