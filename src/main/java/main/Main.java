@@ -1,54 +1,43 @@
 package main;
 
-import selenium.BaseWebTest;
-import selenium.PadalkaWebSeleniumHW;
-
-import java.io.FileNotFoundException;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.chrome.ChromeDriver;
+import selenium.PageObjectHW;
 
 public class Main {
 
     public static void main(String... args) {
-        //BaseWebTest baseWebTest = new BaseWebTest();
-       // baseWebTest.loadGooglePage();
 
-        PadalkaWebSeleniumHW padalkatest = new PadalkaWebSeleniumHW();
-        padalkatest.openBrowser();
-    }
+        WebDriverManager.chromedriver().setup();
+        ChromeDriver chd = new ChromeDriver();
 
-    public static void someMethod() throws FileNotFoundException {
-        someMethod("some_string");
-    }
-
-    public static void someMethod(String input) {
-        someMethod(input, 0);
-    }
-
-    public static void someMethod(String input, int amount) {
-        someMethod(input, amount, false);
-    }
-
-    public static void someMethod(String input, int amount, boolean isTrue) {
-
-    }
-
-    public static class A {
-        public void smth() {
-            System.out.println("this is A");
+        try {
+            PageObjectHW pageObjectHW = new PageObjectHW(chd);
+            testFlareWeb(pageObjectHW);
+            checkPasswordConditions(pageObjectHW);
+        } finally {
+            //chd.quit();
         }
     }
 
-    public static class B extends A {
+    public static void testFlareWeb(PageObjectHW pageObjectHW){
+        pageObjectHW.loadWebSite();
+        pageObjectHW.signUpProcess();
+        pageObjectHW.waitForProcessing();
+        pageObjectHW.fillInEmail("test@test.com");
+        pageObjectHW.fillInPassword("1234GH56");
 
     }
 
-    public static class C extends B {
-        @Override
-        public void smth() {
-            System.out.println("this is C");
+    public static void checkPasswordConditions(PageObjectHW pageObjectHW){
+        if (pageObjectHW.checkSuccessPasswordEntryConditions()){
+            //pageObjectHW.captchaPressBox();
+            pageObjectHW.pressAnySuitableButton();
+        } else {
+            pageObjectHW.fillInPassword("123ghjY&1g");
+            //pageObjectHW.captchaPressBox();
+            pageObjectHW.pressAnySuitableButton();
         }
     }
 
-    public static class D extends C {
-
-    }
 }

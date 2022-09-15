@@ -31,11 +31,11 @@ public class PadalkaWebSeleniumHW {
             searchButton.click();
 
     //Proceed with captcha
-            //WebElement searchCaptchaFrame = chd.findElement(By.xpath("//iframe[@title = 'reCAPTCHA']"));
-            //chd.switchTo().frame(searchCaptchaFrame);
-            //WebElement searchCaptchaBox = chd.findElement(By.className("recaptcha-checkbox-borderAnimation"));
-            //searchCaptchaBox.click();
-            //sendKeys(Keys.ENTER);
+            chd.switchTo().defaultContent();
+            WebElement searchCaptchaFrame = chd.findElement(By.xpath("//iframe[@title = 'reCAPTCHA']"));
+            chd.switchTo().frame(searchCaptchaFrame);
+            WebElement searchCaptchaBox = chd.findElement(By.className("recaptcha-checkbox-borderAnimation"));
+            searchCaptchaBox.click();
 
 
         } finally {
