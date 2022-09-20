@@ -14,9 +14,9 @@ public class WebDriverContainer {
         driver = new ChromeDriver();
     }
 
-    public static WebDriverContainer getWebDriverInstance(){
-        return webDriverInstance;
-    }
+    //public static WebDriverContainer getWebDriverInstance(){
+       // return webDriverInstance;
+    //}
 
     public static WebDriver getDriver(){
         return driver;

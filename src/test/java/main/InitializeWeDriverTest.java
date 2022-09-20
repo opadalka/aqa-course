@@ -13,8 +13,8 @@ public class InitializeWeDriverTest {
 
     @BeforeAll
     //Initialize webdriver
-    public static void InitializeWeDriverTest(){
-        driver = WebDriverContainer.getWebDriverInstance().getDriver();
+    public static void InitializeWebDriverTest(){
+        driver = WebDriverContainer.getDriver();
         page = new AmazonPage(driver);
     }
 
